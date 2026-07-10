@@ -89,16 +89,6 @@ All papers are self-contained single-file HTML documents with inline CSS, inline
 
 ---
 
-## How to Deploy on GitHub Pages
-
-1. Push the repository to GitHub.
-2. Go to **Settings → Pages**.
-3. Set the source to the `main` branch and the root directory.
-4. Papers will be available at `https://[username].github.io/chokepoint-geopolitics/`.
-5. Set `tungsten-clock.html` or `architecture-of-denial.html` as the entry point, or add an `index.html` linking to both.
-
----
-
 ## Citation Policy
 
 These are working papers circulated for discussion and comment. They have not undergone formal peer review. Revised versions may be posted under the same titles as the research develops.
