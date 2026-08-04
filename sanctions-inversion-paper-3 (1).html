@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanctions Inversion: Chokepoint Power and the Limits of Dollar Coercion — Chokepoint Geopolitics Series</title>
+<meta name="description" content="Working paper introducing the Sanctions Inversion mechanism — how a sanctioned state converts physical chokepoint control into counter-sanctions, alternative financial infrastructure, and selective access governance.">
+<meta name="author" content="Beniam Awash, PhD">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  /* ── TOKENS ── */
+  :root {
+    --navy:       #0A0F1E;
+    --deep-water: #1E3A5F;
+    --parchment:  #E8E0D0;
+    --parchment-dim: #B8B0A0;
+    --gold:       #C4963A;
+    --gold-dim:   #8A6A28;
+    --strait:     #7BA7BC;
+    --strait-dim: #4A7A94;
+    --warm-black: #14100A;
+    --card-bg:    rgba(30, 58, 95, 0.35);
+    --border:     rgba(196, 150, 58, 0.2);
+    --border-bright: rgba(196, 150, 58, 0.5);
+
+    --serif-display: 'Playfair Display', Georgia, serif;
+    --serif-body:    'Source Serif 4', 'Times New Roman', serif;
+    --mono:          'JetBrains Mono', 'Courier New', monospace;
+
+    --text-base: 1.0625rem;
+    --leading:   1.75;
+    --col-width: 680px;
+    --sidebar-w: 220px;
+  }
+
+  /* ── RESET ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+
+  body {
+    background: var(--navy);
+    color: var(--parchment);
+    font-family: var(--serif-body);
+    font-size: var(--text-base);
+    line-height: var(--leading);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    border-bottom: 1px solid var(--border-bright);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 15, 30, 0.97);
+    backdrop-filter: blur(6px);
+  }
+
+  .masthead-series {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .masthead-nav {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+
+  .masthead-nav a {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--parchment-dim);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .masthead-nav a:hover { color: var(--strait); }
+
+  /* ── HERO ── */
+  .hero {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 5rem 2rem 3.5rem;
+    text-align: center;
+  }
+
+  .series-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold-dim);
+    padding: 0.3rem 0.8rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .series-badge::before,
+  .series-badge::after {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background: var(--gold);
+    transform: rotate(45deg);
+  }
+
+  .hero h1 {
+    font-family: var(--serif-display);
+    font-size: clamp(1.9rem, 5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--parchment);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-subtitle {
+    font-family: var(--serif-display);
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--strait);
+    margin-bottom: 2.5rem;
+    line-height: 1.35;
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .hero-author {
+    font-family: var(--serif-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--parchment);
+  }
+
+  .hero-details {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--parchment-dim);
+  }
+
+  /* ── DIVIDER — the signature maritime sounding line ── */
+  .divider {
+    display: flex;
+    align-items: center;
+    max-width: var(--col-width);
+    margin: 2.5rem auto;
+    gap: 0;
+  }
+
+  .divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold-dim), transparent);
+  }
+
+  .divider-diamond {
+    width: 7px;
+    height: 7px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+    margin: 0 1rem;
+  }
+
+  /* ── LAYOUT ── */
+  .layout {
+    display: grid;
+    grid-template-columns: var(--sidebar-w) minmax(0, var(--col-width));
+    gap: 0 3rem;
+    max-width: calc(var(--col-width) + var(--sidebar-w) + 3rem + 4rem);
+    margin: 0 auto;
+    padding: 0 2rem 6rem;
+    align-items: start;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    position: sticky;
+    top: 60px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .sidebar-label {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .sidebar-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .sidebar-nav li {
+    border-left: 1px solid var(--border);
+  }
+
+  .sidebar-nav a {
+    display: block;
+    padding: 0.35rem 0.75rem;
+    font-family: var(--serif-body);
+    font-size: 0.78rem;
+    color: var(--parchment-dim);
+    text-decoration: none;
+    transition: color 0.2s, border-left-color 0.2s;
+    line-height: 1.4;
+  }
+
+  .sidebar-nav a:hover {
+    color: var(--strait);
+    border-left: 1px solid var(--strait);
+    margin-left: -1px;
+  }
+
+  .sidebar-nav .sub {
+    font-size: 0.7rem;
+    padding-left: 1.25rem;
+  }
+
+  .sidebar-confidence {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+  }
+
+  .sidebar-confidence .conf-label {
+    font-family: var(--mono);
+    font-size: 0.55rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  .conf-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.25rem 0;
+    border-bottom: 1px solid rgba(196, 150, 58, 0.1);
+    font-size: 0.68rem;
+    gap: 0.5rem;
+  }
+
+  .conf-row:last-child { border-bottom: none; }
+
+  .conf-dim { color: var(--parchment-dim); font-family: var(--serif-body); }
+
+  .conf-badge {
+    font-family: var(--mono);
+    font-size: 0.55rem;
+    letter-spacing: 0.06em;
+    padding: 0.15rem 0.4rem;
+    white-space: nowrap;
+  }
+
+  .conf-high    { background: rgba(123, 167, 188, 0.2); color: var(--strait); border: 1px solid var(--strait-dim); }
+  .conf-med-h   { background: rgba(196, 150, 58, 0.15); color: var(--gold); border: 1px solid var(--gold-dim); }
+  .conf-med-l   { background: rgba(196, 150, 58, 0.08); color: var(--gold-dim); border: 1px solid rgba(196,150,58,0.2); }
+  .conf-mixed   { background: rgba(30,58,95,0.4); color: var(--parchment-dim); border: 1px solid var(--border); }
+
+  /* ── MAIN CONTENT ── */
+  .content {
+    padding-top: 2rem;
+  }
+
+  /* ── SCOPE BANNER ── */
+  .scope-banner {
+    background: var(--card-bg);
+    border-left: 3px solid var(--gold);
+    padding: 0.9rem 1.1rem;
+    margin-bottom: 2.5rem;
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    color: var(--parchment-dim);
+    line-height: 1.5;
+  }
+
+  .scope-banner strong {
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+  }
+
+  /* ── ABSTRACT BOX ── */
+  .abstract-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border-bright);
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .abstract-box h2 {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .abstract-box p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--parchment);
+  }
+
+  .keywords {
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    color: var(--parchment-dim);
+    letter-spacing: 0.06em;
+    line-height: 1.8;
+  }
+
+  .keywords strong {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .jel-line {
+    margin-top: 0.4rem;
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    color: var(--parchment-dim);
+    letter-spacing: 0.06em;
+  }
+
+  /* ── SECTIONS ── */
+  .paper-section {
+    margin-bottom: 3.5rem;
+    scroll-margin-top: 70px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-num {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-family: var(--serif-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--parchment);
+    line-height: 1.25;
+  }
+
+  .subsection-title {
+    font-family: var(--serif-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--strait);
+    margin: 1.75rem 0 0.9rem;
+  }
+
+  p {
+    margin-bottom: 1.1rem;
+    color: var(--parchment);
+  }
+
+  /* ── INLINE STYLES ── */
+  strong { font-weight: 600; color: var(--parchment); }
+  em { font-style: italic; }
+
+  a { color: var(--strait); text-decoration: none; }
+  a:hover { color: var(--gold); text-decoration: underline; }
+
+  /* ── DEFINITION BOX ── */
+  .definition-box {
+    border-left: 3px solid var(--gold);
+    background: rgba(196, 150, 58, 0.07);
+    padding: 1.1rem 1.3rem;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--parchment);
+  }
+
+  .definition-box strong {
+    font-family: var(--serif-display);
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .definition-sub {
+    margin-top: 0.75rem;
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    color: var(--parchment-dim);
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+  }
+
+  /* ── CONCEPT DISTINCTIONS ── */
+  .concept-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+
+  .concept-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 0.9rem 1.1rem;
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .concept-card .concept-name {
+    font-family: var(--serif-display);
+    font-weight: 700;
+    font-style: italic;
+    color: var(--gold);
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+
+  .concept-card .concept-desc {
+    font-size: 0.88rem;
+    color: var(--parchment-dim);
+    line-height: 1.6;
+  }
+
+  .concept-card.active {
+    border-color: var(--gold);
+    background: rgba(196, 150, 58, 0.08);
+  }
+
+  .concept-card.active .concept-name { color: var(--gold); }
+  .concept-card.active .concept-desc { color: var(--parchment); }
+
+  /* ── SCOPE CONDITIONS ── */
+  .scope-conditions {
+    counter-reset: condition;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 1.25rem 0;
+  }
+
+  .condition {
+    counter-increment: condition;
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0.75rem;
+    align-items: start;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--parchment);
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(196,150,58,0.1);
+  }
+
+  .condition:last-child { border-bottom: none; }
+
+  .condition::before {
+    content: counter(condition);
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--gold);
+    font-weight: 500;
+    padding-top: 0.1rem;
+  }
+
+  .condition.special {
+    border-left: 2px solid var(--gold);
+    padding-left: 0.75rem;
+    margin-top: 0.25rem;
+  }
+
+  /* ── DATA TABLES ── */
+  .table-wrapper {
+    overflow-x: auto;
+    margin: 1.75rem 0;
+    border: 1px solid var(--border);
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    font-family: var(--mono);
+  }
+
+  .data-table th {
+    background: rgba(196, 150, 58, 0.15);
+    color: var(--gold);
+    font-weight: 500;
+    font-size: 0.63rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.65rem 0.8rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-bright);
+    white-space: nowrap;
+  }
+
+  .data-table td {
+    padding: 0.55rem 0.8rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--parchment);
+    vertical-align: top;
+    line-height: 1.5;
+    font-size: 0.75rem;
+  }
+
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:hover td { background: rgba(196,150,58,0.04); }
+
+  .figure-caption {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    color: var(--parchment-dim);
+    letter-spacing: 0.05em;
+    margin-top: 0.6rem;
+    line-height: 1.6;
+    font-style: normal;
+  }
+
+  .figure-label {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+
+  /* confidence chips in table */
+  .chip {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.04em;
+    padding: 0.15rem 0.45rem;
+    white-space: nowrap;
+  }
+
+  /* ── CALLOUT / NOTED OBSERVATION ── */
+  .callout {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--strait);
+    padding: 1rem 1.2rem;
+    margin: 1.5rem 0;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--parchment);
+  }
+
+  .callout strong {
+    color: var(--strait);
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  /* ── NULL/INVERSION HYPOTHESIS CARDS ── */
+  .hypothesis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.25rem 0;
+  }
+
+  .hyp-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 1rem;
+    font-size: 0.85rem;
+    line-height: 1.65;
+    color: var(--parchment-dim);
+  }
+
+  .hyp-card h4 {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+
+  .hyp-card.null h4 { color: var(--parchment-dim); }
+  .hyp-card.inv h4  { color: var(--strait); }
+
+  /* ── FAILURE CONDITIONS ── */
+  .failure-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.25rem 0;
+  }
+
+  .failure-list li {
+    padding: 0.85rem 1rem;
+    background: rgba(30,58,95,0.25);
+    border: 1px solid var(--border);
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--parchment);
+  }
+
+  .failure-list li strong {
+    color: var(--gold);
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 0.35rem;
+    font-family: var(--serif-display);
+    font-style: italic;
+  }
+
+  /* ── POSTSCRIPT ── */
+  .postscript-box {
+    background: rgba(30,58,95,0.4);
+    border: 1px solid var(--gold-dim);
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+
+  .postscript-box .post-label {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .postscript-box .post-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border-bright);
+  }
+
+  .postscript-box h3 {
+    font-family: var(--serif-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--parchment);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .scenario-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 1.25rem 0;
+  }
+
+  .scenario {
+    background: rgba(10,15,30,0.5);
+    border: 1px solid var(--border);
+    padding: 0.9rem 1rem;
+    display: grid;
+    grid-template-columns: 1.5rem 1fr;
+    gap: 0.75rem;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--parchment-dim);
+    align-items: start;
+  }
+
+  .scenario-n {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--gold);
+    font-weight: 500;
+    padding-top: 0.1rem;
+  }
+
+  /* ── METHODOLOGICAL NOTE ── */
+  .method-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 1.5rem 1.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .method-box h2 {
+    font-family: var(--mono);
+    font-size: 0.63rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .method-box p {
+    font-size: 0.88rem;
+    color: var(--parchment-dim);
+    line-height: 1.75;
+    margin-bottom: 0.9rem;
+  }
+
+  .method-box p:last-child { margin-bottom: 0; }
+
+  /* ── NOTES ── */
+  .notes-section {
+    margin-top: 3rem;
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+  }
+
+  .notes-section h2 {
+    font-family: var(--mono);
+    font-size: 0.63rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+  }
+
+  .notes-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .notes-list li {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    line-height: 1.55;
+    color: var(--parchment-dim);
+    padding: 0.3rem 0;
+    border-bottom: 1px solid rgba(196,150,58,0.06);
+  }
+
+  .notes-list li:last-child { border-bottom: none; }
+
+  .note-num {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--gold-dim);
+    text-align: right;
+    padding-top: 0.05rem;
+  }
+
+  /* ── REFERENCES ── */
+  .references-section {
+    margin-top: 2.5rem;
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+  }
+
+  .references-section h2 {
+    font-family: var(--mono);
+    font-size: 0.63rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+  }
+
+  .references-section h3 {
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--strait);
+    margin: 1.5rem 0 0.75rem;
+  }
+
+  .ref-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .ref-list li {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--parchment-dim);
+    padding-left: 1.5rem;
+    text-indent: -1.5rem;
+  }
+
+  /* ── FOOTER ── */
+  .paper-footer {
+    border-top: 1px solid var(--border);
+    max-width: calc(var(--col-width) + var(--sidebar-w) + 3rem + 4rem);
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-left {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    color: var(--parchment-dim);
+    line-height: 1.6;
+  }
+
+  .footer-left strong {
+    display: block;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.2rem;
+  }
+
+  .footer-right {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.06em;
+    color: var(--parchment-dim);
+    text-align: right;
+  }
+
+  /* ── TEMPORAL ALERT ── */
+  .temporal-alert {
+    background: rgba(196,150,58,0.08);
+    border: 1px solid var(--gold-dim);
+    padding: 0.7rem 1rem;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.04em;
+    color: var(--parchment-dim);
+    margin-bottom: 2rem;
+    line-height: 1.55;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .temporal-alert::before {
+    content: '⧖';
+    color: var(--gold);
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    line-height: 1.3;
+  }
+
+  /* ── KEY LIT BLOCK ── */
+  .key-lit {
+    background: rgba(30,58,95,0.3);
+    border: 1px solid var(--border);
+    padding: 0.85rem 1rem;
+    margin: 1.5rem 0;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: var(--parchment-dim);
+    font-style: italic;
+  }
+
+  .key-lit strong {
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 860px) {
+    .layout {
+      grid-template-columns: 1fr;
+    }
+    .sidebar {
+      position: static;
+      padding-top: 0;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+    }
+    .sidebar-nav {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+    .sidebar-nav li { border-left: none; }
+    .sidebar-nav a {
+      font-size: 0.6rem;
+      padding: 0.25rem 0.5rem;
+      border: 1px solid var(--border);
+      margin: 0.2rem;
+    }
+    .sidebar-confidence { display: none; }
+    .hypothesis-grid { grid-template-columns: 1fr; }
+    .concept-card { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.65rem; }
+    .masthead-nav { display: none; }
+    .data-table { font-size: 0.68rem; }
+    .data-table th, .data-table td { padding: 0.4rem 0.5rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-series">Chokepoint Geopolitics Series · Paper III</div>
+  <nav>
+    <ul class="masthead-nav">
+      <li><a href="#abstract">Abstract</a></li>
+      <li><a href="#framework">Framework</a></li>
+      <li><a href="#mechanism">Mechanism</a></li>
+      <li><a href="#evidence">Evidence</a></li>
+      <li><a href="#limits">Limits</a></li>
+      <li><a href="#postscript">Postscript</a></li>
+      <li><a href="#notes">Notes</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="series-badge">Chokepoint Geopolitics Series &nbsp;·&nbsp; Paper III</div>
+  <h1>Sanctions Inversion: <em>Chokepoint Power and the Limits of Dollar Coercion</em></h1>
+  <p class="hero-subtitle">How sustained sanctions pressure can produce the financial infrastructure that weakens the dollar coercion generating it</p>
+  <div class="hero-meta">
+    <span class="hero-author">Beniam Awash, PhD</span>
+    <span class="hero-details">Working Paper &nbsp;·&nbsp; March 2026, Revised June 2026 &nbsp;·&nbsp; Postscript June 14, 2026</span>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+
+<!-- MAIN LAYOUT -->
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" aria-label="Paper navigation">
+    <span class="sidebar-label">Contents</span>
+    <ul class="sidebar-nav">
+      <li><a href="#abstract">Abstract</a></li>
+      <li><a href="#intro">I. Introduction</a></li>
+      <li><a href="#framework">II. Theoretical Framework</a></li>
+      <li><a href="#mechanism">III. Three-Dimensional Mechanism</a></li>
+      <li class="sub"><a href="#dim1" class="sub">Deterrence</a></li>
+      <li class="sub"><a href="#dim2" class="sub">Conversion</a></li>
+      <li class="sub"><a href="#dim3" class="sub">Institutionalization</a></li>
+      <li><a href="#evidence">IV. The 2026 Case</a></li>
+      <li><a href="#treasury">V. Treasury Authorization</a></li>
+      <li><a href="#limits">VI. Operational Limits</a></li>
+      <li><a href="#recent">VII. Recent Developments</a></li>
+      <li><a href="#policy">VIII. Policy Implications</a></li>
+      <li><a href="#conclusion">IX. Conclusion</a></li>
+      <li><a href="#method">Methodological Note</a></li>
+      <li><a href="#postscript">Postscript: June 14</a></li>
+      <li><a href="#notes">Notes</a></li>
+      <li><a href="#references">References</a></li>
+    </ul>
+
+    <div class="sidebar-confidence" aria-label="Confidence summary">
+      <span class="conf-label">Evidence Confidence</span>
+      <div class="conf-row">
+        <span class="conf-dim">Deterrence</span>
+        <span class="conf-badge conf-high">High</span>
+      </div>
+      <div class="conf-row">
+        <span class="conf-dim">Conversion</span>
+        <span class="conf-badge conf-med-h">Med-High</span>
+      </div>
+      <div class="conf-row">
+        <span class="conf-dim">Institution.</span>
+        <span class="conf-badge conf-med-l">Med-Low</span>
+      </div>
+      <div class="conf-row">
+        <span class="conf-dim">Treasury</span>
+        <span class="conf-badge conf-mixed">Mixed</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="content">
+
+    <!-- TEMPORAL SCOPE -->
+    <div class="temporal-alert">
+      Drafted March 2026 during Operation Epic Fury. Revised through June 10, 2026. Postscript added June 14, 2026. The conflict remains unresolved as of the submission date; analysis is provisional.
+    </div>
+
+    <!-- ABSTRACT -->
+    <section id="abstract" class="abstract-box" aria-labelledby="abstract-head">
+      <h2 id="abstract-head">Abstract</h2>
+      <p>This paper introduces the <strong>Sanctions Inversion</strong>, a mid-range concept in the political economy of financial statecraft: the process by which a sanctioned state converts physical chokepoint control into counter-sanctions, alternative financial infrastructure, and selective access governance. Building on Hirschman's insight that coercion generates the adaptations designed to erode it, and extending Farrell and Newman's weaponized interdependence framework to the case of the target state as coercive actor, the paper argues that the 2026 Hormuz crisis exhibits the mechanism's observable components. Iran's selective transit regime, yuan-denominated toll architecture, and quota-based access governance are not separate responses to military pressure but sequential components of a single counter-coercive strategy.</p>
+      <p>The paper systematizes and operationalizes as a distinct mechanism a dynamic the sanctions literature has addressed only in scattered and partial form. Its central claim is bounded but consequential: under specific structural conditions — comprehensive sanctions, physical chokepoint control at the cross-domain intersection of energy flow and financial clearing, and exhausted passive endurance — the target of economic coercion can become a provider of system-critical access, reversing the direction of dependence that sanctions are designed to exploit.</p>
+      <div class="keywords">
+        <strong>Keywords</strong> &nbsp; sanctions inversion · coercive self-erosion · weaponized interdependence · chokepoint governance · dedollarization · petrodollar · Strait of Hormuz · Hormuz crisis 2026 · Iran · financial statecraft · dollar hegemony
+      </div>
+      <div class="jel-line"><strong style="color:var(--gold)">JEL</strong> &nbsp; F51 · F52 · F36 · G15<sup>1</sup></div>
+    </section>
+
+    <div class="divider" aria-hidden="true"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+
+    <!-- I. INTRODUCTION -->
+    <section id="intro" class="paper-section" aria-labelledby="intro-head">
+      <div class="section-header">
+        <span class="section-num">I</span>
+        <h2 class="section-title" id="intro-head">Introduction: The Inversion Problem</h2>
+      </div>
+
+      <p>The sanctions efficacy literature rests on an assumption that has gone largely unexamined: the sanctioning state retains coercive advantage throughout the coercive episode. The target may evade, adapt, or survive, but it does not become a source of structural pressure on the sanctioner. Drezner's account of when sanctions work treats the sanctioner's network position as given.<sup>2</sup> Farrell and Newman's weaponized interdependence framework explains how states exploit centrality in global networks to coerce others, but does not theorize what happens when the target state acquires sufficient physical chokepoint control to weaponize the sanctioner's own interdependence against it.<sup>3</sup> Neither framework anticipates the inversion case.</p>
+
+      <p>The 2026 Hormuz crisis provides the first large-scale empirical instance of that case. Iran, the most comprehensively sanctioned state in modern history by the metric of OFAC designations, converted physical control of the Strait of Hormuz — through which approximately 21 million barrels of oil transit daily, representing roughly 21 percent of global petroleum liquids consumption — into a selective transit regime that imposed passage conditions on the dollar-based energy trading system itself.<sup>4</sup> Ships paid yuan-denominated and stablecoin-denominated tolls to transact outside SWIFT-dependent clearing. States received differentiated access based on their relationship to the sanctioning architecture. Within three weeks of the campaign's launch, the United States issued a narrow authorization for Iranian oil cargoes to relieve the domestic energy price shock its own campaign had generated — behavior consistent with structural coercion of the sanctioner by the sanctioned.<sup>5</sup></p>
+
+      <p>The <strong>Sanctions Inversion</strong> names the mechanism that produced this outcome: a specific causal sequence in which sustained coercive pressure against a state with physical chokepoint control does not produce compliance but instead generates counter-coercive capacity, organized across three sequential and mutually reinforcing dimensions.</p>
+
+      <div class="callout">
+        <strong>A note on what a single case can establish</strong>
+        This paper examines one case, observed while still in progress. The inferential target throughout is <em>mechanism presence</em> — whether the deterrence-conversion-institutionalization sequence can be observed in operation — not the scale or durability of any resulting structural consolidation. The strongest contribution lies in the deterrence and conversion dimensions, for which evidence is convergent and well-sourced. The institutionalization dimension is present in suggestive but inconclusive form; its confirmation or disconfirmation will determine whether the 2026 case demonstrates a full three-dimensional inversion or a more partial counter-coercive sequence. Confirmation of all three dimensions requires comparative work this paper does not attempt.
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+
+    <!-- II. FRAMEWORK -->
+    <section id="framework" class="paper-section" aria-labelledby="framework-head">
+      <div class="section-header">
+        <span class="section-num">II</span>
+        <h2 class="section-title" id="framework-head">Theoretical Framework: Coercive Self-Erosion and the Inversion Case</h2>
+      </div>
+
+      <p>Hirschman identified a fundamental asymmetry in economic coercion: the exercise of leverage motivates the adjustment it was designed to prevent.<sup>6</sup> Writing about trade dependence between unequal-sized economies — his central cases were Nazi Germany's commercial relationships with smaller Southeastern European states — Hirschman showed that converting commercial asymmetry into political leverage tends to generate, over time, the diversification efforts that erode that asymmetry. This paper builds on the general structure of that insight: the imposition of pressure is available to the dominant party on demand, while the adaptation it motivates accumulates in the dependent party at a rate that increases with each exercise of pressure.</p>
+
+      <p>Farrell and Newman (2019) extended this logic to financial and informational networks, showing how states occupying central positions in architectures such as SWIFT can weaponize that centrality for coercive purposes.<sup>7</sup> Awash (2025) develops the Hirschman-Farrell-Newman synthesis into the claim that each coercive deployment of dollar network position achieves short-term pressure while simultaneously motivating long-term structural decoupling — a concept termed <em>coercive self-erosion</em>.<sup>8</sup> Consistent with this: OFAC designations grew 933 percent from 2000 to 2025, while unilateral sanctions success rates fell from approximately 21 percent to 13 percent over the same period.<sup>9</sup></p>
+
+      <p>Three conceptual distinctions clarify where the Sanctions Inversion sits in this analytical landscape:</p>
+
+      <div class="concept-grid">
+        <div class="concept-card">
+          <span class="concept-name">Sanctions Evasion</span>
+          <span class="concept-desc">Workarounds — shadow fleets, third-country intermediaries, informal barter — that allow the target to transact without challenging the sanctioning architecture. Reduces pressure on the target but imposes no structural costs on the sanctioner.</span>
+        </div>
+        <div class="concept-card">
+          <span class="concept-name">Sanctions Resilience</span>
+          <span class="concept-desc">Macroeconomic survival under sustained pressure: maintaining sufficient economic function to avoid the compliance or collapse that sanctions target. Resilience is defensive and generates no leverage over the sanctioner.</span>
+        </div>
+        <div class="concept-card active">
+          <span class="concept-name">Sanctions Inversion</span>
+          <span class="concept-desc">The target uses physical chokepoint control to impose passage conditions (deterrence), converts that leverage into durable alternative financial infrastructure (conversion), and deploys selective access governance to differentiate among states (institutionalization). All three together constitute inversion.</span>
+        </div>
+      </div>
+
+      <div class="definition-box">
+        <strong>Formal Definition</strong>
+        The Sanctions Inversion is the process by which a sanctioned state converts physical chokepoint control over critical infrastructure into counter-sanctions, financial alternative-building, and selective access governance, at sufficient scale and in sufficient sequence to impose structural costs on the sanctioning state's financial or energy architecture.
+        <div class="definition-sub">The concept is specified as a three-dimensional mechanism; whether any given case confirms all three dimensions is an empirical question. This paper documents the first two dimensions — deterrence and conversion — with high and medium-high confidence respectively in the 2026 case, and treats institutionalization as an active empirical question whose resolution will determine whether the case supports the full mechanism or a more partial counter-coercive sequence.</div>
+      </div>
+
+      <p>Venezuela and Russia demonstrate that the enabling conditions are met rarely. Venezuela lacks the cross-domain chokepoint making inversion available — physical disruption remains bilateral rather than systemic, yielding evasion and resilience, not inversion.<sup>10</sup> Russia since 2022 shows strong conversion but incomplete institutionalization: no single physical chokepoint gives Russia the ability to sort dependent third parties into access categories on terms it administers.<sup>11</sup> Inversion requires the target to control the <em>terms of access</em>, not merely to survive without it.</p>
+
+      <p>Four structural conditions are required for the Sanctions Inversion to become available:</p>
+
+      <div class="scope-conditions">
+        <div class="condition">Comprehensive and sustained sanctions that have exhausted passive endurance as a viable strategy — not simply duration, but the institutional conclusion that continued passivity leads to regime change or structural collapse.</div>
+        <div class="condition">Physical control over a chokepoint through which the sanctioning state's energy supply critically depends, with non-substitutability at speed as the operative criterion.</div>
+        <div class="condition">Sufficient financial and political infrastructure — alternative payment rails, shadow maritime logistics, a legal framing with an international legitimacy constituency — to operationalize chokepoint control as a governing instrument.</div>
+        <div class="condition special">The chokepoint must sit at the intersection of two distinct dependency structures simultaneously: a <strong>physical flow dependency</strong> (the sanctioner's energy supply routes through territory the target controls) and a <strong>financial clearing dependency</strong> (that flow is priced, settled, and recycled through a currency architecture the sanctioner dominates). Hormuz is the rare point where both coincide.</div>
+      </div>
+
+      <div class="key-lit">
+        <strong>Key Literature</strong>
+        Farrell &amp; Newman (2019), "Weaponized Interdependence" · Eichengreen, <em>Exorbitant Privilege</em> (2011) · Drezner (1999), <em>The Sanctions Paradox</em> · Nephew (2018), <em>The Art of Sanctions</em> · Helleiner (2008), "Political Determinants of International Currencies" · Prasad (2014), <em>The Dollar Trap</em> · Hirschman (1945), <em>National Power</em> · de Zayas (2018), UN Special Rapporteur Report · CEPR (2023), "The Human Consequences of Economic Sanctions"
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+
+    <!-- III. MECHANISM -->
+    <section id="mechanism" class="paper-section" aria-labelledby="mechanism-head">
+      <div class="section-header">
+        <span class="section-num">III</span>
+        <h2 class="section-title" id="mechanism-head">The Three-Dimensional Mechanism: Deterrence, Conversion, Institutionalization</h2>
+      </div>
+
+      <p>Iran's Hormuz strategy operates across three sequenced and mutually reinforcing dimensions. The first creates leverage. The second converts that leverage into durable institutional infrastructure. The third embeds both within a regional hierarchy whose structure outlasts the conflict generating it.</p>
+
+      <p>Observable markers at each stage: at <em>deterrence</em> — a shift from latent chokepoint control to explicit conditional access, replacing implicit threat with administered governance. At <em>conversion</em> — measurable migration in transaction routing: currency denomination, clearing channels, toll or quota systems generating transaction volumes outside the sanctioner's financial architecture. At <em>institutionalization</em> — third-party behavioral differentiation, with states adjusting payment behavior, alignment posture, or negotiating position as a function of their access status. Failure to observe this ordering weakens the inversion claim.</p>
+
+      <h3 class="subsection-title" id="dim1">First Dimension: Deterrence as Counter-Coercive Legal Claim</h3>
+
+      <p>Iran's deterrence strategy rests on legal and humanitarian grounds. Alfred de Zayas, former UN Special Rapporteur, concluded after his 2017 fact-finding mission that U.S. sanctions imposed without UN Security Council authorization constitute illegal economic warfare.<sup>13</sup> The CEPR's 2023 study documents that the share of world GDP produced in sanctioned countries has risen from under 4 percent in the early 1960s to 29 percent today.<sup>14</sup></p>
+
+      <p>The de Zayas position is contested — the prevailing view holds that transit passage rights under UNCLOS Articles 37 and 38 represent binding customary international law.<sup>15</sup> Yet that contestation is itself analytically significant. Iran is deploying <strong>instrumentalized legitimacy</strong> — a strategic use of legal ambiguity to build political coalitions. Legal ambiguity generates political legitimacy; political legitimacy generates coalition-building capacity. The deterrence dimension achieves strategic effect regardless of whether the underlying legal argument prevails.</p>
+
+      <p>By 2026, every prior avenue for contesting the sanctions regime had been exhausted: the 2015 JCPOA (abandoned by the U.S. in 2018), multilateral legal challenge (producing opinions without enforcement), and shadow-fleet adaptation (partial relief, coercive architecture intact).<sup>16</sup> The Hormuz tollbooth makes the cost of sustained pressure legible to those who had previously borne no cost for imposing it.</p>
+
+      <h3 class="subsection-title" id="dim2">Second Dimension: Conversion of Leverage into Financial Architecture</h3>
+
+      <p>The financial counter-architecture that emerged in 2026 was not improvised crisis management. It was the institutional consolidation of a counter-sanctions strategy built under years of sanctions exposure. Iran did not build a financial alternative to the dollar system during the war — it built that alternative before the war, under the pressure of sanctions that made construction a survival imperative.</p>
+
+      <p>The dynamic is Hirschman's mechanism at network scale: the coercive instrument created its own successor. The 27 percent of countries subject to Western sanctions, and the 29 percent of world GDP produced in sanctioned countries, represent a community of states with a shared material interest in financial alternatives that do not route through dollar-clearing systems.<sup>17</sup> The Hormuz tollbooth functions as a proof of concept: chokepoint leverage can generate the transaction volumes and payment rails to make an alternative architecture operational at scale.</p>
+
+      <h3 class="subsection-title" id="dim3">Third Dimension: Institutionalization Through Selective Access Governance</h3>
+
+      <p>Hormuz control provides Iran with the structural ability to differentiate among states based on their relationship to the sanctioning architecture. The Pakistan case is the paper's clearest illustration: a nuclear-armed state of 220 million people, historically aligned with the United States, holds a transit quota that reporting indicates it is exploring how to monetize through sub-licensing.<sup>18</sup> The preferential access extended to China, Russia, India, Iraq, Malaysia, Thailand, and the Philippines amounts to a quiet acknowledgment from each that Hormuz access flows through Tehran.<sup>19</sup> The institutionalization dimension carries the weakest evidentiary support of the three — see Section IV.</p>
+    </section>
+
+    <div class="divider" aria-hidden="true"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+
+    <!-- IV. EVIDENCE -->
+    <section id="evidence" class="paper-section" aria-labelledby="evidence-head">
+      <div class="section-header">
+        <span class="section-num">IV</span>
+        <h2 class="section-title" id="evidence-head">The 2026 Case: Evidence, Confounders, and Confidence Levels</h2>
+      </div>
+
+      <p>The distinction between a market shock and an inversion is not evidentiary density — it is <strong>governance</strong>. A market shock produces decentralized adaptation that resolves when supply is restored. An inversion produces centralized access control: a governance regime that structures who transits, on what terms, through which financial channels, generating institutional form that persists beyond the disruption activating it. The diagnostic is governance, not price.</p>
+
+      <h3 class="subsection-title">Evidence for Dimension One: Deterrence</h3>
+
+      <p>Operation Epic Fury launched February 28, 2026, with U.S. and Israeli strikes on Iranian territory.<sup>21</sup> Within days, Iran operationalized a selective transit regime: ships paid approximately $1.5–2 million per vessel crossing, confirmed by Lloyd's List Intelligence, the Financial Times, and USNI News, with payments accepted in yuan, cryptocurrency, and barter.<sup>30</sup> Brent crude reached $141.36 per barrel by early April 2026 — its highest level since the 2008 financial crisis.<sup>23</sup></p>
+
+      <p>On March 30, 2026, Iran's Parliament National Security Commission approved the "Strait of Hormuz Management Plan," codifying the inversion in domestic law.<sup>24</sup> Its five operative elements in sequence: a rial-based toll system; explicit bans on U.S. and Israeli vessels; prohibition on passage for any country participating in unilateral sanctions; Iranian armed forces as guarantors of safe passage for compliant vessels; and a cooperation framework with Oman. Iran and Oman formalized a joint governance protocol that would convert a right of passage under international law into a permit issued jointly by Tehran and Muscat.<sup>26</sup></p>
+
+      <div class="callout">
+        <strong>Observable Marker · Deterrence</strong>
+        The shift from latent chokepoint control to explicit conditional access is documented across Bloomberg reporting, parliamentary legislation, and the Iran-Oman governance protocol — three independent source types converging on the same operational facts. <strong style="color:var(--strait)">Confidence: High.</strong> The primary alternative — that declared governance was strategic posturing without operational implementation — is weakened by documented toll collection and vessel screening across multiple independent sources.
+      </div>
+
+      <h3 class="subsection-title">Evidence for Dimension Two: Conversion</h3>
+
+      <p>The scale of disruption to commercial transit had no modern parallel: between March 1 and 25, 2026, Lloyd's List Intelligence recorded only 142 transits through the Strait of Hormuz, against 2,652 in the same period in 2025 — a 94.6 percent decline against a historical average of approximately 138 transits in a single 24-hour period.<sup>29</sup> War risk insurance premiums for Hormuz transit jumped from approximately 0.25 percent of hull value pre-conflict to a range of 1–3 percent within weeks, translating to an additional $1.5–$4.5 million per voyage for a $150 million tanker.<sup>31</sup></p>
+
+      <p>Yuan settles outside SWIFT-dependent dollar clearing; stablecoins transfer on blockchain rails bypassing correspondent banking and Treasury enforcement reach. By 2025, Iranian-linked cryptocurrency activity had reached an estimated $7.8 billion on-chain.<sup>32</sup> CIPS recorded a structural surge in March 2026, with daily volumes rising from a prior range of $85–$105 billion to over $130 billion.<sup>33</sup></p>
+
+      <p><strong>Confounder:</strong> The larger CIPS growth trajectory from 2022 onward was primarily driven by Russia-Ukraine sanctions evasion routing and Chinese domestic CIPS policy. The March 2026 conflict-period surge is the most directly traceable data point to the Hormuz events, but it accelerated a trend whose causes are multiple.</p>
+
+      <div class="callout">
+        <strong>Observable Marker · Conversion</strong>
+        Measurable migration in transaction routing — yuan and stablecoin denomination, CIPS channel surge, documented per-vessel toll collection, and war risk insurance repricing — documented across multiple independent data sources. <strong style="color:var(--gold)">Confidence: Medium-High.</strong> The Russia-Ukraine confounder is named and bounded; the conflict-period surge represents acceleration of pre-existing trends rather than a clean before-after comparison.
+      </div>
+
+      <h3 class="subsection-title">Evidence for Dimension Three: Institutionalization</h3>
+
+      <p>In March 2026, Indian refiners purchased approximately 60 million barrels of Russian crude in transactions settled by converting rupees to UAE dirhams or Chinese yuan, bypassing the U.S. dollar entirely.<sup>34</sup> Attribution to Hormuz governance specifically, rather than to Russia-Ukraine trade patterns that predate the 2026 conflict, remains contested.<sup>36</sup> The Pakistan quota case remains reported as under exploration, with no confirmed execution.<sup>37</sup></p>
+
+      <div class="callout">
+        <strong>Observable Marker · Institutionalization</strong>
+        Third-party behavioral differentiation is reported across multiple sources, but the dimension's two strongest illustrations carry different evidentiary weight: the India case shows confirmed transactions with <em>contested attribution</em>; the Pakistan case shows a distinctive governance form <em>reported as under exploration, with no confirmed execution</em>. <strong style="color:var(--gold-dim)">Confidence: Medium-Low.</strong> If no additional instances of third-party behavioral differentiation emerge as the MoU is implemented, the 2026 case would support a two-dimensional rather than three-dimensional mechanism.
+      </div>
+
+      <h3 class="subsection-title">The Dollar Counter-Evidence</h3>
+
+      <p>The reserve-share and transaction-share data must be held simultaneously rather than read selectively. IMF COFER data for Q3 2025 puts the dollar's reserve share at 56.92 percent, down from a 2001 peak of 72 percent.<sup>38</sup> Against this, the BIS 2025 Triennial Survey finds the dollar in <strong>89.2 percent</strong> of all foreign exchange transactions in April 2025, up from 88.4 percent in 2022.<sup>41</sup> The IMF's Q2 2025 COFER brief found that 92 percent of that quarter's reserve decline was exchange-rate driven rather than active reallocation.<sup>42</sup></p>
+
+      <span class="figure-label">Figure 1 · Dollar Position in the International Financial System, 2015–2026</span>
+      <div class="table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Dollar Share FX Reserves (IMF COFER)</th>
+              <th>Dollar Share FX Transactions (BIS)</th>
+              <th>CIPS Daily Volume</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>2015</td><td>65.7%</td><td>—</td><td>~$20B</td></tr>
+            <tr><td>2019</td><td>61.3%</td><td>—</td><td>~$72B</td></tr>
+            <tr><td>2022</td><td>—</td><td>88.4%</td><td>~$97B</td></tr>
+            <tr><td>2023</td><td>57.8%</td><td>—</td><td>~$115B</td></tr>
+            <tr><td>Q3 2025</td><td>56.92%</td><td>—</td><td>~$120B</td></tr>
+            <tr><td>April 2025</td><td>—</td><td><strong>89.2%</strong></td><td>—</td></tr>
+            <tr><td>March 2026</td><td>~56% (est.)</td><td>—</td><td><strong>$134B</strong></td></tr>
+            <tr><td>Trend since 2014</td><td>−1.2pp / year</td><td>+0.8pp (2022–25)</td><td>+38% CAGR</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="figure-caption">BIS survey conducted triennially (2019, 2022, 2025); n/a entries reflect survey cadence, not missing data. CIPS series reports nominal daily transaction value, not inflation-adjusted, not distinguishing settled volume from gross transaction value. Conflict-period estimates carry additional uncertainty due to data reporting lags. This figure presents three series because the reserve-share and transaction-share series tell different stories — a figure showing only the former would visually imply a degree of dollar decline the latter does not support. The paper's claim concerns the CIPS column and its conflict-period acceleration, not a generalized dollar decline.</p>
+
+      <span class="figure-label" style="margin-top:2rem;display:block">Figure 2 · Sanctions Inversion Framework: Mechanism Stages Against 2026 Observations</span>
+      <div class="table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Stage</th>
+              <th>Observable Marker</th>
+              <th>2026 Evidence</th>
+              <th>Confidence</th>
+              <th>Primary Confounder</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Deterrence</td>
+              <td>Declared or enforced conditional access replacing latent chokepoint control</td>
+              <td>Bloomberg April 1 toll regime; Hormuz Management Plan March 30; Iran-Oman governance protocol April 2</td>
+              <td><span class="chip conf-high">High</span></td>
+              <td>Pre-existing IRGC doctrine; conflict activated rather than created capability</td>
+            </tr>
+            <tr>
+              <td>Conversion</td>
+              <td>Measurable migration in transaction routing: currency, clearing, toll volumes</td>
+              <td>CIPS surge to $134B daily; yuan/stablecoin settlement confirmed; war risk insurance repricing; Pakistan quota activity</td>
+              <td><span class="chip conf-med-h">Med-High</span></td>
+              <td>Russia-Ukraine war as primary 2022–2025 CIPS driver; Chinese domestic CIPS policy</td>
+            </tr>
+            <tr>
+              <td>Institutionalization</td>
+              <td>Third-party behavioral differentiation based on access status</td>
+              <td>Pakistan quota under exploration (unexecuted); India rupee-to-yuan settlement (confirmed, contested attribution); GCC dual-track negotiations</td>
+              <td><span class="chip conf-med-l">Med-Low</span></td>
+              <td>Attribution to Hormuz governance vs. broader realignment contested; Pakistan unconfirmed; India driven substantially by Russia-Ukraine patterns</td>
+            </tr>
+            <tr>
+              <td>Treasury Authorization</td>
+              <td>Sanctioner adjusting policy in response to chokepoint-induced price pressure</td>
+              <td>U.S. Treasury narrow Iranian oil authorization, March 19, 2026; not renewed April 19</td>
+              <td><span class="chip conf-mixed">High (event) / Medium (inversion evidence)</span></td>
+              <td>Non-renewal April 19 consistent with logistics management, not structural accommodation — see Section V</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="figure-caption">Confidence assessments reflect the author's judgment against the evidentiary standard in the methodological note. Institutionalization confidence revised downward in light of unconfirmed Pakistan sublicensing mechanism.</p>
+    </section>
+
+    <div class="divider" aria-hidden="true"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+
+    <!-- V. TREASURY -->
+    <section id="treasury" class="paper-section" aria-labelledby="treasury-head">
+      <div class="section-header">
+        <span class="section-num">V</span>
+        <h2 class="section-title" id="treasury-head">The Treasury Authorization: Competing Interpretations</h2>
+      </div>
+
+      <p>Treasury Secretary Scott Bessent publicly discussed lifting sanctions on specific Iranian oil cargoes to mitigate energy price spikes; the Treasury subsequently issued a short-term, narrow authorization for certain Iranian oil shipments already at sea, confirmed simultaneously by the BBC, the New York Times, and Politico (all March 19, 2026).<sup>43</sup> Two interpretations are available; the documentary record does not adjudicate between them.</p>
+
+      <div class="hypothesis-grid">
+        <div class="hyp-card null">
+          <h4>Null Hypothesis: Routine Logistics Management</h4>
+          Cargoes already at sea represent sunk shipping costs; preventing their disposal from compounding an acute price spike is the kind of narrow administrative judgment Treasury has made in other sanctions contexts. The authorization reveals only that Treasury retains discretion over edge cases — not a structural trade-off between coercive credibility and systemic stability. No source indicates Treasury officials perceived a broader strategic dilemma.
+        </div>
+        <div class="hyp-card inv">
+          <h4>Inversion-Consistent: Revealed Preference Under Constraint</h4>
+          The authorization is a small but visible instance of a larger structural pattern: a sanctioning state whose economy depends on a controlled chokepoint will, when that leverage generates sufficient price pressure, find itself adjusting the sanctions regime in ways that benefit the target. The claim is not that this authorization was strategically momentous, but that it exemplifies events the inversion mechanism predicts will recur and accumulate.
+        </div>
+      </div>
+
+      <p>The first piece of evidence from the prospective test <strong>favors the null hypothesis</strong>. Treasury declined to renew the authorization when it expired on April 19, 2026, reverting to full enforcement of sanctions on Iranian oil.<sup>44a</sup> A sanctioning state following a structural-accommodation pattern would not revert to full enforcement within thirty days. The non-renewal is more consistent with routine crisis logistics management than with a structural pattern of coercive credibility yielding to systemic stability.</p>
+
+      <p>This does not close the question. The June 14, 2026 MoU and its accompanying sanctions waivers represent a much larger-scale accommodation — better read as evidence of the structural trade-off this paper theorizes, but at a level driven by conflict-termination dynamics rather than the chokepoint-leverage mechanism alone. Readers should weight the March 19 authorization accordingly: it is <em>less</em> analytically significant for the inversion case than the MoU's sanctions-waiver terms, which are addressed in the postscript.
+</p>
+    </section>
+
+    <div class="divider" aria-hidden="true"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+
+    <!-- VI. LIMITS -->
+    <section id="limits" class="paper-section" aria-labelledby="limits-head">
+      <div class="section-header">
+        <span class="section-num">VI</span>
+        <h2 class="section-title" id="limits-head">Operational Limits: Where the Framework Fails</h2>
+      </div>
+
+      <ul class="failure-list">
+        <li>
+          <strong>Toll regime sustainability is unproven.</strong>
+          Iran cannot indefinitely maintain armed escort through a high-intensity conflict zone. A sustained coalition naval response could restore transit before the governance architecture hardens into settled practice. The framework fails if a ceasefire arrives quickly enough that payment rails and quota systems do not achieve the transaction volumes necessary to sustain themselves once military pressure is removed.<sup>45</sup>
+        </li>
+        <li>
+          <strong>Dollar resilience remains formidable.</strong>
+          The BIS 2025 data recording the dollar at 89.2 percent of all foreign exchange transactions is serious counter-evidence to the paper's stronger structural claims.<sup>46</sup> The framework fails as a systemic dollar challenge if yuan and stablecoin settlement rails remain instruments of conflict-period exception rather than generalizing across other trade corridors.
+        </li>
+        <li>
+          <strong>The disruption is partial and bypass capacity is real.</strong>
+          Saudi Petroline and UAE ADCOP together provide approximately 6–7 million barrels per day of rerouting capacity against the 20-plus million that normally transit Hormuz.<sup>47</sup> The framework fails as a long-term systemic claim if oil-producing states complete alternative pipeline infrastructure. The claim is not that Hormuz is permanently irreplaceable, but that demonstrated capacity to exercise physical coercion establishes a structural precedent.
+        </li>
+        <li>
+          <strong>The institutionalization dimension may remain unconfirmed.</strong>
+          If the Pakistan sublicensing mechanism is never executed and the India transaction pattern proves attributable primarily to Russia-Ukraine trade dynamics, the institutionalization dimension would not be supported by the 2026 case. This would not falsify the Sanctions Inversion as a concept, but it would mean the 2026 case provides evidence for a two-dimensional rather than three-dimensional mechanism.
+        </li>
+      </ul>
+    </section>
+
+    <div class="divider" aria-hidden="true"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+
+    <!-- VII. RECENT DEVELOPMENTS -->
+    <section id="recent" class="paper-section" aria-labelledby="recent-head">
+      <div class="section-header">
+        <span class="section-num">VII</span>
+        <h2 class="section-title" id="recent-head">Recent Developments: June 2026</h2>
+      </div>
+
+      <p><strong>April 8 ceasefire and its structural limits.</strong> Pakistan brokered a two-week ceasefire on April 8, 2026.<sup>48</sup> The ceasefire did not resolve the Hormuz transit question. Iran continued blocking the Strait to most commercial shipping; the United States responded with a naval blockade of Iranian ports beginning April 13, producing a dual blockade whose economic consequences compounded across the global economy.<sup>49</sup></p>
+
+      <p><strong>Operation Project Freedom.</strong> On May 4, 2026, President Trump announced Operation Project Freedom — guided-missile destroyers and over 100 aircraft to escort merchant vessels through Hormuz. The operation was paused within 48 hours, with only two vessels guided through; Iran attacked U.S. Navy and commercial vessels before the pause was announced.<sup>50</sup> By launching Project Freedom, the United States conceded that free transit through Hormuz can no longer be assumed and must be actively secured through military force — consistent with the inversion mechanism's prediction that the sanctioner would be compelled to deploy substantial resources managing the structural consequences of its own financial coercion policy.</p>
+
+      <p><strong>Iran's framing as the new status quo.</strong> The Institute for the Study of War and Critical Threats Project assessed on May 30, 2026 that "Iran continues to try to frame IRGC 'management' of transit through the Strait of Hormuz as the new status quo."<sup>51</sup> IRGC naval forces stated publicly that conditions in the Strait "will never return to its former status, especially for the US and Israel."<sup>52</sup> That such statements are being made at all is consistent with the institutionalization dimension operating as described — though its confirmation remains the case's central open question.</p>
+
+      <p><strong>Negotiations in Doha.</strong> As of June 10, 2026, Iran and the United States are engaged in talks on freedom of navigation, Iran's nuclear and ballistic missile program, sanctions relief, and a long-term peace agreement.<sup>53</sup> The presence of Iran's Central Bank governor in the Doha delegation is consistent with the financial counter-architecture being treated as a substantive negotiating subject.<sup>54</sup></p>
+    </section>
+
+    <div class="divider" aria-hidden="true"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+
+    <!-- VIII. POLICY -->
+    <section id="policy" class="paper-section" aria-labelledby="policy-head">
+      <div class="section-header">
+        <span class="section-num">VIII</span>
+        <h2 class="section-title" id="policy-head">Policy Implications</h2>
+      </div>
+
+      <p>The preceding analysis is positive; the policy implications that follow are conditional on accepting that analysis as accurate, and are addressed to policymakers operating within the existing financial-coercion architecture. They are offered alongside the humanitarian and escalation costs that any sanctions or counter-coercion regime generates.</p>
+
+      <p><strong>Reform the sanctions architecture before it completes its own obsolescence.</strong> Multilateral authorization requirements and automatic sunset clauses are the institutional mechanisms most directly applicable to the reflexive failure documented here.<sup>55</sup> The announced June 14, 2026 memorandum of understanding gives this implication concrete illustration: a sanctions architecture that reaches the point of negotiating away its own chokepoint-related leverage in exchange for asset release and reconstruction financing is the self-erosion this paper theorizes, observed in real time. Sanctions design that minimizes third-party collateral and includes mandatory effectiveness review would also reduce the humanitarian costs that sanctions of this scale impose on civilian populations.</p>
+
+      <p><strong>Build a credible alternative to the petrodollar's physical enforcement mechanism.</strong> The petrodollar system rests on the U.S. security umbrella for Gulf energy infrastructure — an umbrella Operation Project Freedom showed to be operationally contested.<sup>56</sup> A financial architecture capable of maintaining dollar oil pricing without depending on uncontested physical control of the Strait of Hormuz, anchored in voluntary Gulf state pricing commitments backed by economic rather than military guarantees, is the long-term structural requirement.</p>
+    </section>
+
+    <div class="divider" aria-hidden="true"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+
+    <!-- IX. CONCLUSION -->
+    <section id="conclusion" class="paper-section" aria-labelledby="conclusion-head">
+      <div class="section-header">
+        <span class="section-num">IX</span>
+        <h2 class="section-title" id="conclusion-head">Conclusion</h2>
+      </div>
+
+      <p>The Sanctions Inversion identifies a condition under which the structural logic of economic coercion reverses. The target state becomes a provider of system-critical access; the sanctioner becomes dependent on the target's governance of that access for the stability of its own financial and energy architecture. The Hormuz case makes such a reversal observable in two of its three constituent dimensions with high and medium-high confidence; the third — institutionalization — is present in suggestive but inconclusive form, and its resolution will determine whether this paper has documented a full three-dimensional inversion or a two-dimensional counter-coercive sequence.</p>
+
+      <p>The deterrence and conversion dimensions are documented at high and medium-high confidence respectively. Iran has constructed an operational chokepoint governance regime — administered, screened, monetized, and codified in domestic legislation — that transacts in non-dollar channels at volumes substantial enough to constitute a governance architecture rather than a workaround. At the legal level, Iran has created an enforcement gap in which legal rights are theoretical and Iranian permit codes are practical.</p>
+
+      <p>The institutionalization dimension remains the case's central open question. It is supported at present by one confirmed but contested attribution (India) and one distinctive governance form reported as under exploration, with execution status undetermined (Pakistan). In its current evidentiary state, the framework is best understood as demonstrating two well-documented dimensions and one plausible but unconfirmed extension: if future evidence confirms selective access governance as a durable feature, the full three-dimensional inversion will have been established; if not, the deterrence-conversion sequence remains a novel and analytically significant form of counter-coercive capacity that existing frameworks did not anticipate.</p>
+
+      <p>Three directions for future research: First, do states at cross-domain chokepoint intersections develop counter-coercive capacity at a different rate than those facing equivalent pressure without such chokepoints? Second, does the institutionalization dimension persist after conflict resolution, or does selective access governance dissolve once the military pressure that activated it ends? Third, does the pattern exemplified by the March 19 Treasury authorization recur in other cases where a sanctioner's energy supply routes through a sanctioned state's chokepoint?</p>
+
+      <p>The structural precedent, if it is a precedent, has been set in the deterrence and conversion dimensions. Whether it extends to the fuller sense the Sanctions Inversion concept proposes — encompassing institutionalized selective access governance — remains to be seen.</p>
+    </section>
+
+    <div class="divider" aria-hidden="true"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+
+    <!-- METHODOLOGICAL NOTE -->
+    <section id="method" class="paper-section" aria-labelledby="method-head">
+      <div class="method-box">
+        <h2 id="method-head">Methodological Note</h2>
+        <p>This paper draws on open-source reporting, published financial data, oil-flow tracking from Kpler and Vortexa, the international legal literature on sanctions, and the theoretical framework of coercive self-erosion developed in Awash (2025) from Hirschman (1945) and Farrell and Newman (2019). Awash (2025) is an unpublished prior working paper by this author, not independently accessible to readers; it is cited here for the genealogy of the coercive self-erosion concept.</p>
+        <p>The paper's scope is deliberately bounded: it examines the structural logic and financial consequences of Iran's Hormuz strategy without attempting a full causal account of escalation to the 2026 war. This is a single-case study of an ongoing conflict. It cannot establish base rates, cannot rule out that the observed mechanism is conflict-period adaptation rather than durable structural change, and cannot fully separate the sanctions regime's effects from the broader geopolitical escalation dynamics that may jointly produce both (the endogeneity problem).</p>
+        <p>Evidence is tiered by dimension: deterrence — high confidence, convergent across independent source types; conversion — medium-high confidence with a named and bounded confounder; institutionalization — medium-low confidence, with the Pakistan dimension reported as under exploration with execution status undetermined, and the India case confirmed in transaction but contested in attribution.</p>
+        <p>This paper is a positive analytical account of the Sanctions Inversion mechanism. It does not endorse unilateral financial coercion, chokepoint coercion, or the legal positions advanced by either party to the conflict it examines. The documented humanitarian consequences of comprehensive sanctions and the contested legal status of chokepoint governance are among the structural conditions that make the inversion mechanism politically operable. The paper takes no position on their legal or moral resolution.</p>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+
+    <!-- POSTSCRIPT -->
+    <section id="postscript" class="paper-section" aria-labelledby="postscript-head">
+      <div class="postscript-box">
+        <div class="post-label">Postscript · Added June 14, 2026</div>
+        <h3 id="postscript-head">The June 14, 2026 Memorandum of Understanding</h3>
+
+        <p>This paper was revised through June 10, 2026. On June 14 — four days later — Iran and the United States announced that a memorandum of understanding to end the conflict had been finalized, with a signing ceremony scheduled for June 19 in Switzerland.<sup>57</sup> Reported terms include an immediate and permanent cessation of hostilities; lifting of the U.S. naval blockade; reopening of the Strait of Hormuz to commercial traffic; unfreezing of a substantial tranche of Iranian assets ($12–25 billion total depending on source); temporary U.S. sanctions waivers on Iranian oil, gas, and petrochemical exports; and a 60-day negotiating period for a final agreement covering a reconstruction fund reportedly in the range of $300 billion, partially financed by Gulf states.<sup>59</sup></p>
+
+        <p><strong>The Hormuz governance question is unresolved — and the disagreement tracks precisely the fault line this paper's framework anticipated.</strong> The U.S.-reported draft (via Axios and Bloomberg) specifies Hormuz reopens "immediately, without tolls."<sup>60</sup> The Iranian-reported draft (via Mehr and IRNA) specifies reopening "within 30 days, under Iranian arrangements" — preserving Iran's authority to set management, routing, security, and service requirements.<sup>61</sup> Iran's ambassador to Moscow stated explicitly that "there will be charges for those services" — using the terms "transit fees" and "charges for those services" rather than "tolls."<sup>62</sup> This is the institutionalization question in statutory form.</p>
+
+        <p><strong>Three scenarios, mapped onto this paper's framework:</strong></p>
+
+        <div class="scenario-grid">
+          <div class="scenario">
+            <span class="scenario-n">1</span>
+            <span>The signed text adopts the U.S. "no tolls, immediate opening" language without a substantive Iranian fee-and-arrangements regime → institutionalization dimension not confirmed; selective access governance was the casualty of, rather than the consolidation following, the conflict.</span>
+          </div>
+          <div class="scenario">
+            <span class="scenario-n">2</span>
+            <span>The signed text adopts or splits toward the Iranian "under Iranian arrangements" / "service fees" language → institutionalization substantially confirmed: the toll regime survives the negotiation in relabeled form.</span>
+          </div>
+          <div class="scenario">
+            <span class="scenario-n">3</span>
+            <span>(Perhaps most likely) The signed text leaves the question deliberately ambiguous, with the actual operational regime determined by what Iran does and the U.S. tolerates in the 30-day implementation window → the institutionalization question is displaced onto the implementation period.</span>
+          </div>
+        </div>
+
+        <p style="margin-top:1rem;font-size:0.85rem;color:var(--parchment-dim);">This postscript identifies the specific, observable fault line along which the paper's central open question will be resolved. It does not resolve it. <em>A further revision is anticipated following the scheduled June 19 signing and the initial weeks of implementation.</em></p>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+
+    <!-- NOTES (condensed for HTML) -->
+    <section id="notes" class="notes-section">
+      <h2>Selected Notes</h2>
+      <p style="font-size:0.78rem;color:var(--parchment-dim);margin-bottom:1rem;">Full notes appear in the SSRN and Markdown versions. Notes marked † are new additions in this revision.</p>
+      <ul class="notes-list">
+        <li><span class="note-num">1</span><span>JEL: F51 (International Conflicts; Negotiations; Sanctions), F52 (National Security; Economic Nationalism), F36 (Financial Aspects of Economic Integration), G15 (International Financial Markets).</span></li>
+        <li><span class="note-num">2</span><span>Drezner, <em>The Sanctions Paradox</em> (Cambridge UP, 1999); Drezner, "The United States of Sanctions," <em>Foreign Affairs</em> 100, no. 5 (2021): 142–154.</span></li>
+        <li><span class="note-num">3</span><span>Farrell and Newman, "Weaponized Interdependence," <em>International Security</em> 44, no. 1 (2019): 42–79; Farrell and Newman, <em>Underground Empire</em> (Henry Holt, 2023).</span></li>
+        <li><span class="note-num">6</span><span>Hirschman, <em>National Power and the Structure of Foreign Trade</em> (UC Press, 1945; expanded ed. 1980). Empirical cases: German trade with Bulgaria, Hungary, Romania, Yugoslavia in the 1930s.</span></li>
+        <li><span class="note-num">29</span><span>Lloyd's List Intelligence, cited in USNI News, "IRGC Opens Tolled Passage for Merchant Ships in Strait of Hormuz," March 27, 2026. Between March 1–25: 142 transits vs. 2,652 in same period 2025.</span></li>
+        <li><span class="note-num">30</span><span>Boroujerdi (Iranian lawmaker), IRIB interview, cited in Iran International and Fox News, March 22, 2026; confirmed by Lloyd's List Intelligence, FT, USNI News, March 27, 2026; Kurdistan 24, June 7, 2026.</span></li>
+        <li><span class="note-num">31</span><span>FairwayETA, "War Risk Insurance 2026," May 6, 2026, citing Caixin Global, Marsh, Insurance Business, Lloyd's Market Association; Howden Re market brief, March 27, 2026; Neil Roberts, Lloyd's Market Association, interview with Xinhua, July 10, 2026.</span></li>
+        <li><span class="note-num">44a †</span><span>Wall Street Journal, "Treasury Won't Renew Authorization Permitting Sale of Some Iranian Oil," April 2026; Times of Israel, "US says it won't renew temporary ease on Iran oil sanctions that expires Sunday," April 2026.</span></li>
+      </ul>
+    </section>
+
+    <!-- REFERENCES (condensed) -->
+    <section id="references" class="references-section">
+      <h2>References</h2>
+      <h3>Peer-Reviewed &amp; Institutional Sources (Selected)</h3>
+      <ul class="ref-list">
+        <li>Arslanalp, Eichengreen, and Simpson-Bell. 2022. "The Stealth Erosion of Dollar Dominance." <em>Journal of International Economics</em> 138: 103656.</li>
+        <li>Bank for International Settlements. 2025. <em>Triennial Central Bank Survey</em>. Basel: BIS.</li>
+        <li>Center for Economic and Policy Research. 2023. "The Human Consequences of Economic Sanctions." CEPR Discussion Paper, May.</li>
+        <li>Cohen, Benjamin J. 2015. <em>Currency Power: Understanding Monetary Rivalry</em>. Princeton UP.</li>
+        <li>Congressional Research Service. 2026. "Iran Conflict and the Strait of Hormuz." March.</li>
+        <li>De Zayas, Alfred. 2018. <em>Report of the Independent Expert on the Promotion of a Democratic and Equitable International Order</em>. UN HRC (A/HRC/39/47).</li>
+        <li>Drezner, Daniel W. 1999. <em>The Sanctions Paradox</em>. Cambridge UP.</li>
+        <li>Drezner, Daniel W. 2021. "The United States of Sanctions." <em>Foreign Affairs</em> 100, no. 5: 142–154.</li>
+        <li>Farrell, Henry, and Abraham L. Newman. 2019. "Weaponized Interdependence." <em>International Security</em> 44, no. 1: 42–79.</li>
+        <li>Farrell, Henry, and Abraham L. Newman. 2023. <em>Underground Empire</em>. Henry Holt.</li>
+        <li>Hirschman, Albert O. 1945. <em>National Power and the Structure of Foreign Trade</em>. UC Press. Expanded ed. 1980.</li>
+        <li>International Monetary Fund. 2025. <em>COFER Data Briefs, Q1–Q3 2025</em>. Washington, DC: IMF.</li>
+        <li>Kraska, James. 2011. <em>Maritime Power and the Law of the Sea</em>. Oxford UP.</li>
+        <li>Martin, Lisa L. 1992. <em>Coercive Cooperation</em>. Princeton UP.</li>
+        <li>Nephew, Richard. 2018. <em>The Art of Sanctions</em>. Columbia UP.</li>
+        <li>Prasad, Eswar. 2014. <em>The Dollar Trap</em>. Princeton UP.</li>
+        <li>World Gold Council. 2025. <em>Gold Demand Trends Full Year 2024</em> and <em>Central Bank Gold Reserves Survey 2025</em>. London: WGC.</li>
+      </ul>
+
+      <h3>Primary Reporting (Selected)</h3>
+      <ul class="ref-list">
+        <li>Atlantic Council GeoEconomics Center. 2026. "Inside Tehran's Toll Booth." April 1.</li>
+        <li>Bloomberg (El Wardany, Longley, Soon, Cheong). 2026. "Strait of Hormuz: Ships Paying Iran Yuan and Crypto Tolls." April 1.</li>
+        <li>FairwayETA. 2026. "War Risk Insurance 2026: Why Hormuz Transits Now Cost $1.5M-$4.5M More Per Voyage." May 6.</li>
+        <li>Howden Re. 2026. "Strait of Hormuz." Market Brief. March 27.</li>
+        <li>Kurdistan 24. 2026. "Iran Confirms Strait of Hormuz Tolls Now Operational, Charging up to $2 Million Per Vessel." June 7.</li>
+        <li>USNI News. 2026. "IRGC Opens Tolled Passage for Merchant Ships in Strait of Hormuz." March 27.</li>
+        <li>Wall Street Journal. 2026. "Treasury Won't Renew Authorization Permitting Sale of Some Iranian Oil." April.</li>
+        <li><em>Full references appear in the SSRN and Markdown versions of this paper.</em></li>
+      </ul>
+    </section>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer class="paper-footer">
+  <div class="footer-left">
+    <strong>Chokepoint Geopolitics Series · Paper III</strong>
+    Beniam Awash, PhD &nbsp;·&nbsp; March 2026, Revised June 10, 2026<br>
+    Postscript Added June 14, 2026 &nbsp;·&nbsp; Preliminary Draft — Comments Welcome
+  </div>
+  <div class="footer-right">
+    <em>Papers I–II and forthcoming work available in the series repository.</em>
+  </div>
+</footer>
+
+</body>
+</html>
